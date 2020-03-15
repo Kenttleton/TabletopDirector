@@ -1,0 +1,43 @@
+version: '3.4'
+
+services:
+  tabletopdirector:
+    container_name: tabletopdirector
+    hostname: tabletopdirector
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - db
+  db:
+    container_name: db
+    hostname: db
+    image: postgres:11
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "rH84VOH343"
+      POSTGRES_USER: "app"
+      POSTGRES_DB: "application"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  adminer:
+    container_name: adminer
+    hostname: adminer
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on: 
+    - db
+
+volumes: 
+     pgdata:

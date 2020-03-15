@@ -1,13 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>87f5cd5f-4d81-4679-9d45-daf553d4d191</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TabletopDirector.Communications\TabletopDirector.Communications.csproj" />
+    <ProjectReference Include="..\TabletopDirector.GameMaster\TabletopDirector.GameMaster.csproj" />
+    <ProjectReference Include="..\TabletopDirector.Player\TabletopDirector.Player.csproj" />
+    <ProjectReference Include="..\TabletopDirector.Rules.D6\TabletopDirector.Rules.D6.csproj" />
+    <ProjectReference Include="..\TabletopDirector.Rules\TabletopDirector.Rules.csproj" />
+    <ProjectReference Include="..\TabletopDirector.Utilities\TabletopDirector.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

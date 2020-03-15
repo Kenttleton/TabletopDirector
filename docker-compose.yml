@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tabletopdirector:
+    image: ${DOCKER_REGISTRY-}tabletopdirector
+    build:
+      context: .
+      dockerfile: Frontend/Dockerfile
