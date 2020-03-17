@@ -12,18 +12,21 @@ namespace TabletopDirector
         private readonly RequestDelegate _next;
         private readonly ILogger _logger;
 
-        public TabletopDirectorMiddleware(RequestDelegate next, ILoggerFactory? logFactory = null)
+        public TabletopDirectorMiddleware(RequestDelegate next, ILoggerFactory? loggerFactory = null)
         {
             _next = next;
-            if(logFactory != null)
+            if(loggerFactory != null)
             {
-                _logger = logFactory.CreateLogger("Tabletop Director Middleware");
+                _logger = loggerFactory.CreateLogger("Tabletop Director Middleware");
             }
         }
 
-        public async Task Invoke(HttpContext httpContext) 
+        public async Task InvokeAsync(HttpContext httpContext) 
         {
             _logger.LogInformation("Tabletop Director Initializing...");
+
+            // Get Context
+            // Check/Set Auth
 
             await _next(httpContext);
         }

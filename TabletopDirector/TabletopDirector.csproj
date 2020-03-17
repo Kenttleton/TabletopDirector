@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TabletopDirector.Auth\TabletopDirector.Auth.csproj" />
     <ProjectReference Include="..\TabletopDirector.Communications\TabletopDirector.Communications.csproj" />
-    <ProjectReference Include="..\TabletopDirector.GameMaster\TabletopDirector.GameMaster.csproj" />
-    <ProjectReference Include="..\TabletopDirector.Player\TabletopDirector.Player.csproj" />
+    <ProjectReference Include="..\TabletopDirector.DataAccess\TabletopDirector.DataAccess.csproj" />
     <ProjectReference Include="..\TabletopDirector.Rules.D6\TabletopDirector.Rules.D6.csproj" />
     <ProjectReference Include="..\TabletopDirector.Rules\TabletopDirector.Rules.csproj" />
     <ProjectReference Include="..\TabletopDirector.Utilities\TabletopDirector.Utilities.csproj" />
